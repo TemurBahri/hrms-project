@@ -2,6 +2,7 @@ package Humanresourcesmanagementsystem.hrms.entitites.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,8 +16,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "employees")
 @AllArgsConstructor
 @NoArgsConstructor
+@PrimaryKeyJoinColumn(name = "id")
 
-public class Employee  {
+public class Employee extends User {
 	
 	@Column(name = "first_name")
 	private String firstName;

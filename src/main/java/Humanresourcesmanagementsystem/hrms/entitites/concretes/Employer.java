@@ -1,8 +1,15 @@
 package Humanresourcesmanagementsystem.hrms.entitites.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +22,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "employers")
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Employer  {
+@PrimaryKeyJoinColumn(name = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisement"})
+public class Employer extends User {
 	
 	
 	
@@ -28,5 +36,13 @@ public class Employer  {
 	
 	@Column(name = "phone_number")
 	private String phoneNumber;
+	
+	@Column(name="is_activated")
+	private boolean is_activated;
+	
+	@OneToMany(mappedBy = "employer",  fetch = FetchType.LAZY)
+	private List<JobAdvertisement> jobAdvertisement;
+
+	
 
 }

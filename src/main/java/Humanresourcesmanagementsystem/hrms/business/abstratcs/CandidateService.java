@@ -6,6 +6,7 @@ import Humanresourcesmanagementsystem.hrms.core.utilities.results.DataResult;
 import Humanresourcesmanagementsystem.hrms.core.utilities.results.Result;
 import Humanresourcesmanagementsystem.hrms.entitites.concretes.Candidate;
 
+
 public interface CandidateService {
 	
 	DataResult<List<Candidate>> getAll();

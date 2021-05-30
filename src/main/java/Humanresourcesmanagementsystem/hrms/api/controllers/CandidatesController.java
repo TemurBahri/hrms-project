@@ -21,10 +21,9 @@ public class CandidatesController {
 	
 	private CandidateService candidateService;
 	
-
-	
 	@Autowired
 	public CandidatesController(CandidateService candidateService) {
+		super();
 		this.candidateService = candidateService;
 	}
 	

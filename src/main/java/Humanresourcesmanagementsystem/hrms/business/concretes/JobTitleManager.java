@@ -3,6 +3,7 @@ package Humanresourcesmanagementsystem.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import Humanresourcesmanagementsystem.hrms.business.abstratcs.JobTitleService;
 import Humanresourcesmanagementsystem.hrms.core.utilities.results.DataResult;
@@ -12,6 +13,7 @@ import Humanresourcesmanagementsystem.hrms.core.utilities.results.SuccessResult;
 import Humanresourcesmanagementsystem.hrms.dataAccess.abstratcs.JobTitleDao;
 import Humanresourcesmanagementsystem.hrms.entitites.concretes.JobTitle;
 
+@Service
 public class JobTitleManager implements JobTitleService {
 	
 	private JobTitleDao jobTitleDao;

@@ -3,6 +3,8 @@ package Humanresourcesmanagementsystem.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import Humanresourcesmanagementsystem.hrms.business.abstratcs.JobSeekerService;
 import Humanresourcesmanagementsystem.hrms.core.utilities.results.DataResult;
 import Humanresourcesmanagementsystem.hrms.core.utilities.results.Result;
@@ -11,7 +13,7 @@ import Humanresourcesmanagementsystem.hrms.core.utilities.results.SuccessResult;
 import Humanresourcesmanagementsystem.hrms.dataAccess.abstratcs.JobSeekerDao;
 import Humanresourcesmanagementsystem.hrms.entitites.concretes.JobSeeker;
 
-
+@Service
 public class JobSeekerManager implements JobSeekerService {
 	
 	private JobSeekerDao jobSeekerDao;
@@ -26,7 +28,7 @@ public class JobSeekerManager implements JobSeekerService {
 	@Override
 	public DataResult<List<JobSeeker>> getAll() {
 		
-		return new SuccessDataResult<List<JobSeeker>>(this.jobSeekerDao.findAll(), "Ürünler başarıyla listelendi.");
+		return new SuccessDataResult<List<JobSeeker>>(this.jobSeekerDao.findAll(), "İş arayanlar başarıyla listelendi.");
 				
 	}
 

@@ -3,6 +3,7 @@ package Humanresourcesmanagementsystem.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import Humanresourcesmanagementsystem.hrms.business.abstratcs.UserService;
 import Humanresourcesmanagementsystem.hrms.core.utilities.results.DataResult;
@@ -10,6 +11,7 @@ import Humanresourcesmanagementsystem.hrms.core.utilities.results.SuccessDataRes
 import Humanresourcesmanagementsystem.hrms.dataAccess.abstratcs.UserDao;
 import Humanresourcesmanagementsystem.hrms.entitites.concretes.User;
 
+@Service
 public class UserManager implements UserService{
 	
 	private UserDao userDao;
@@ -22,7 +24,7 @@ public class UserManager implements UserService{
 	@Override
 	public DataResult<List<User>> getAll() {
 		
-		return new SuccessDataResult<List<User>>(this.userDao.findAll(), "Data listelendi.");
+		return new SuccessDataResult<List<User>>(this.userDao.findAll(), "Kullanıcılar başarıyla listelendi.");
 	}
 
 }
