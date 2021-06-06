@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import Humanresourcesmanagementsystem.hrms.entitites.concretes.Cv.Image;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+
 
 
 public class User {
@@ -33,5 +36,14 @@ public class User {
 	
 	@Column(name = "password")
 	private String password;
+	
+	public User(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+	
+	
+	
 
 }
